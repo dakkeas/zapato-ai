@@ -11,13 +11,14 @@ export default function FeatureBottom() {
             <div className="flex gap-10 my-20">
 
                 <div className="flex flex-col gap-5 min-h-[500px]">
-                    <Image
-                    style={{objectFit: 'cover'}}
-                    src="/green_sneaker.jpg"
-                    height={400}
-                    width={500}
-                    alt='Green Sneaker'
-                    />
+                    <div className="relative w-full h-[400px]">
+                        <Image
+                        src="/person_1.jpg"
+                        fill
+                        alt='John Doe'
+                        className="object-cover"
+                        />
+                    </div>
                     <div className="flex flex-col gap-3">
                         <div className="text-white font-medium text-xl">John Doe</div>
                         <div className="text-sm text-gray-400">
@@ -26,13 +27,14 @@ export default function FeatureBottom() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-5 min-h-[500px]">
-                    <Image
-                    style={{objectFit: 'cover'}}
-                    src="/green_sneaker.jpg"
-                    height={400}
-                    width={500}
-                    alt='Green Sneaker'
-                    />
+                    <div className="relative w-full h-[400px]">
+                        <Image
+                        src="/person_2.jpg"
+                        fill
+                        alt='Jane Smith'
+                        className="object-cover"
+                        />
+                    </div>
                     <div className="flex flex-col gap-3">
                         <div className="text-white font-medium text-xl">Jane Smith</div>
                         <div className="text-sm text-gray-400">
@@ -40,14 +42,15 @@ export default function FeatureBottom() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
-                    <Image
-                    style={{objectFit: 'cover'}}
-                    src="/green_sneaker.jpg"
-                    height={400}
-                    width={500}
-                    alt='Green Sneaker'
-                    />
+                <div className="flex flex-col gap-5 min-h-[500px]">
+                    <div className="relative w-full h-[400px]">
+                        <Image
+                        src="/person_3.jpg"
+                        fill
+                        alt='Alice Johnson'
+                        className="object-cover"
+                        />
+                    </div>
                     <div className="flex flex-col gap-3">
                         <div className="text-white font-medium text-xl">Alice Johnson</div>
                         <div className="text-sm text-gray-400">
@@ -55,14 +58,15 @@ export default function FeatureBottom() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
-                    <Image
-                    style={{objectFit: 'cover'}}
-                    src="/green_sneaker.jpg"
-                    height={400}
-                    width={500}
-                    alt='Green Sneaker'
-                    />
+                <div className="flex flex-col gap-5 min-h-[500px]">
+                    <div className="relative w-full h-[400px]">
+                        <Image
+                        src="/person_4.jpg"
+                        fill
+                        alt='Bob Brown'
+                        className="object-cover"
+                        />
+                    </div>
                     <div className="flex flex-col gap-3">
                         <div className="text-white font-medium text-xl">Bob Brown</div>
                         <div className="text-sm text-gray-400">
