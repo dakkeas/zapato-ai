@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from "next/link";
 import Create from '../components/create';
 import Collections from '../components/collections';
+import { Box, LibraryBig} from 'lucide-react';
 
 const DashboardPage = () => {
     const [activeTab, setActiveTab] = useState('tab1');
@@ -24,22 +25,33 @@ const DashboardPage = () => {
     };
 
     return (
-        <div className="min-h-screen  flex flex-col justify-between">
-            <div className="bg-white p-12">
+        <div className="min-h-screen  flex flex-col justify-between scrollbar-hide bg-custom-light-grey">
+            <div className="bg-gray-50 p-12 scrollbar-none">
                 <div className="text-3xl mb-6 font-bold">Zapato<span className="text-custom-dark-green">AI</span></div>
                 <div className="flex mb-6 gap-2">
-                    <button
-                        className={`w-28 px-4 py-1 rounded-l-sm text-sm font-medium  ${activeTab === 'tab1' ? 'bg-custom-dark-green text-white' : 'bg-gray-200'}`}
-                        onClick={() => setActiveTab('tab1')}
+                    <div
+                    className={`caret-transparent cursor-pointer flex justify-center items-center gap-2 flex-row w-29 px-4 py-2 rounded-md text-sm font-medium  ${activeTab === 'tab1' ? 'bg-custom-dark-green text-white' : 'bg-gray-200'}`}
+                    onClick={() => setActiveTab('tab1')}
                     >
-                        Create
-                    </button>
-                    <button
-                        className={`w-28 px-4 py-1 text-sm rounded-r-sm font-medium  ${activeTab === 'tab2' ? 'bg-custom-dark-green text-white' : 'bg-gray-100 text-gray-500'}`}
-                        onClick={() => setActiveTab('tab2')}
+                        <Box size={20} color={activeTab == "tab1" ? "white" : "black"}/>
+                        <div
+                            
+                        >
+                            Create
+                        </div>
+                    </div>
+                    <div
+                    className={`caret-transparent cursor-pointer flex justify-center items-center gap-2 flex-row w-29 px-4 py-2 rounded-md text-sm font-medium  ${activeTab === 'tab2' ? 'bg-custom-dark-green text-white' : 'bg-gray-200'}`}
+                            onClick={() => setActiveTab('tab2')}
                     >
-                        Collections
-                    </button>
+                        <LibraryBig size={20} color={activeTab == "tab2" ? "white" : "black"}/>
+                        <div
+                            
+                        >
+                            Collections
+                        </div>
+                    </div>
+
                 </div>
                 <div className='flex'>
                     <div className="flex-1">
@@ -56,7 +68,8 @@ const DashboardPage = () => {
                 </Link>
             </button> */}
 
-            
+
+
             </div>
         </div>
     );

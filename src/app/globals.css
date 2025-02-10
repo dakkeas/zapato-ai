@@ -7,3 +7,21 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari */
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Hide scrollbar in IE & Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+}
