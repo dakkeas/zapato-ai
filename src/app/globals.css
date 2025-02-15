@@ -25,3 +25,12 @@
     scrollbar-width: none; /* Hide scrollbar in Firefox */
   }
 }
+
+canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block; /* Prevents extra spacing */
+  /* zoom: 1.25; */
+}
