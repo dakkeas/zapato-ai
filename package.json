@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "^9.0.0-alpha.8",
+    "axios": "^1.7.9",
     "gltf-import-export": "^1.0.22",
     "gltfjsx": "^6.5.3",
     "lucide-react": "^0.475.0",

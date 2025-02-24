@@ -5,7 +5,6 @@ const Footer = () => {
         <footer className="bg-white text-black py-20 px-52">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex flex-col">
-                    <img src="/path/to/logo.png" alt="Logo" className="h-10 mb-4" />
                     <p className="text-gray-600">© 2025 Zapato AI. All rights reserved.</p>
                     <p className="text-gray-600">1234 AI Street, Innovation City, Techland</p>
                     <p className="text-gray-600">Zapato AI School of Technology</p>

@@ -25,7 +25,7 @@ export async function POST() {
   } catch (error) {
     console.error('Error during conversion:', error);
     return NextResponse.json(
-      { message: 'Conversion failed', error: error.message },
+      { message: 'Conversion failed', error},
       { status: 500 }
     );
   }

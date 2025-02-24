@@ -1,4 +1,3 @@
-import react from 'react'
 
 import {Download, Sparkles} from 'lucide-react'
 import Loader from './3Dloader'
@@ -6,7 +5,7 @@ import Image from 'next/image'
 // import { convertGlbtoGltf } from '../lib/glbtogltf'
 
 
-export default function Result () {
+export default function Result ({status, image}) {
 
     const handleConversionAndGeneration = async () => {
     try {
@@ -29,6 +28,7 @@ export default function Result () {
           alert('Component generation failed.');
         }
       } else {
+        
         console.error('GLB to GLTF Conversion Error:', data.error);
         alert('GLB to GLTF conversion failed.');
       }
@@ -36,7 +36,7 @@ export default function Result () {
       console.error('Error during the process:', error);
       alert('An error occurred during the process.');
     }
-    };
+    }
     
     return (
         <div className="flex flex-col bg-white rounded-md shadow-lg p-10 gap-5 w-full max-w-screen h-full" >
@@ -52,13 +52,14 @@ export default function Result () {
                             <Image
                             src="/running_shoe.jpeg"
                             fill
+  
                             alt='Running Shoe'
                             className="object-cover rounded-md shadow-md"
                             />
-                        </div>
-                        <div className="absolute bottom-9 right-4 bg-custom-light-grey  text-white px-3 py-1 rounded-full flex flex-row gap-2 items-center justify-center">
-                            <Sparkles size={16} color="grey"></Sparkles>
-                            <div className="text-gray-500 text-center text-sm font-medium">AI Generated</div>
+                            <div className="absolute bottom-6 right-4 bg-custom-light-grey  text-white px-3 py-1 rounded-full flex flex-row gap-2 items-center justify-center">
+                                <Sparkles size={15} color="grey"></Sparkles>
+                                <div className="text-gray-500 text-center text-sm font-medium">AI Generated</div>
+                            </div>
                         </div>
                     </div>
 

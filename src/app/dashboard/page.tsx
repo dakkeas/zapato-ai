@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import Link from "next/link";
 import Create from '../components/create';
 import Collections from '../components/collections';
 import { Box, LibraryBig} from 'lucide-react';
@@ -19,10 +18,6 @@ const DashboardPage = () => {
         }
     };
 
-    const handleLogout = () => {
-        // Handle logout logic here
-        console.log('Logged out');
-    };
 
     return (
         <div className="min-h-screen  flex flex-col justify-between scrollbar-hide bg-custom-light-grey">

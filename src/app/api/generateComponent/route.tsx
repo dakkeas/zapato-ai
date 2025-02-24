@@ -33,7 +33,7 @@ export async function POST() {
   } catch (error) {
     console.error('Error during component generation:', error);
     return NextResponse.json(
-      { message: 'Component generation failed', error: error.message },
+      { message: 'Component generation failed', error},
       { status: 500 }
     );
   }

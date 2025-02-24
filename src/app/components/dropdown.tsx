@@ -2,11 +2,20 @@
 
 import React, { useState } from 'react';
 
-export default function Dropdown({ title, isOpen, onToggle, content }) {
-    const [selected, setSelected] = useState(null);
+interface DropdownProps {
+    title: string;
+    isOpen: boolean;
+    onToggle: () => void;
+    content: Record<string, [string, string]>;
+}
 
-    const onSelect = (key) => {
+export default function Dropdown({ title, isOpen, onToggle, content, setSelectedOption }: DropdownProps) {
+    const [selected, setSelected] = useState<string | null>(null);
+
+    const onSelect = (key: string) => {
         setSelected(key);
+        setSelectedOption(content[key][0]);
+
         onToggle(); // Close the dropdown after selection
     };
 
@@ -24,10 +33,10 @@ export default function Dropdown({ title, isOpen, onToggle, content }) {
                 </svg>
             </button>
 
-            <div id="dropdownRadioHelper" className={`${isOpen ? '' : 'hidden'} z-10 absolute bg-white divide-y divide-gray-100  shadow-xl w-60 mt-2`}>
+            <div id="dropdownRadioHelper" className={`${isOpen ? '' : 'hidden'} z-10 absolute bg-white divide-y divide-gray-100 shadow-xl w-60 mt-2`}>
                 <ul className="p-4 space-y-1 text-sm text-gray-700 caret-transparent scrollbar-hide" aria-labelledby="dropdownRadioHelperButton">
                     {Object.entries(content).map(([key, value]) => (
-                        <li key={key} onClick={() => onSelect(key)} >
+                        <li key={key} onClick={() => onSelect(key)}>
                             <div className="flex p-2 rounded-sm hover:bg-gray-100 caret-transparent cursor-pointer">
                                 <div className="ms-2 text-sm cursor-pointer">
                                     <label htmlFor={`helper-radio-${key}`} className="font-medium text-gray-900 cursor-pointer">
