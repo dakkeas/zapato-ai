@@ -6,8 +6,8 @@ const Footer = () => {
             <div className="container mx-auto flex justify-between items-center">
                 <div className="flex flex-col">
                     <p className="text-gray-600">© 2025 Zapato AI. All rights reserved.</p>
-                    <p className="text-gray-600">1234 AI Street, Innovation City, Techland</p>
-                    <p className="text-gray-600">Zapato AI School of Technology</p>
+                    <p className="text-gray-600">Multi-purpose Hall, J. Chanyungco St, Marikina, 1800 Metro Manila</p>
+                    <p className="text-gray-600">Marikina Science High School</p>
                 </div>
                 <div className="flex gap-10">
                     <div className="flex flex-col">

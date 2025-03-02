@@ -11,8 +11,6 @@ const Create = () => {
     const [definedPrompt, setDefinedPrompt] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
 
-    
-
     const handleGenerate = async () => {
         if (!definedPrompt.trim() || !selectedModelOption || !selectedImageFormat) {
             alert("Please fill all fields!");
@@ -27,16 +25,16 @@ const Create = () => {
         }
 
         try {
-            const res1 = await fetch("/api/generateImage", { 
+            let res1 = await fetch("/api/generateImage", { 
                 method: "POST", 
                 body: JSON.stringify({ definedPrompt, selectedImageFormat, selectedModelOption }) 
             });
             if (!res1.ok) throw new Error("Image generation failed");
 
-            const res2 = await fetch("/api/generate3D", { method: "POST" });
+            let res2 = await fetch("/api/generate3D", { method: "POST" });
             if (!res2.ok) throw new Error("3D generation failed");
 
-            const res3 = await fetch("/api/convertGLB", { method: "POST" });
+            let res3 = await fetch("/api/convertGLB", { method: "POST" });
             if (!res3.ok) throw new Error("GLB conversion failed");
 
             setStatus("done");
@@ -55,7 +53,6 @@ const Create = () => {
                     setSelectedImageFormat={setSelectedImageFormat}
                 />
                 <PromptBox
-                    status={status}
                     definedPrompt={definedPrompt}
                     setDefinedPrompt={setDefinedPrompt}
                     onGenerate={handleGenerate}

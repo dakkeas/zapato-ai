@@ -40,7 +40,7 @@ export default function Result({ status, selectedImageFormat }: ResultProps) {
                                 </div>
                             ) : (
                                 <Image
-                                    src={`/result.${selectedImageFormat}?timestamp=${Date.now()}`} // ⏳ Cache-busting
+                                    src={`/result.jpeg`} // ⏳ Cache-busting
                                     fill
                                     alt="Result Image"
                                     className="object-cover rounded-md shadow-md"

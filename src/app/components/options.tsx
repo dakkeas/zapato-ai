@@ -9,9 +9,7 @@ interface OptionsProps {
 }
 
 const imageFormatOptions: Record<string, [string, string]> = {
-    jpeg: ["jpeg", "Common image format with good compression and quality"],
-    png: ["png", "Lossless format with transparency support"],
-    webp: ["webp", "Modern format with superior compression and quality"]
+    jpeg: ["jpeg", "Common image format with good compression and quality"]
 };
 
 const modelOptions: Record<string, [string, string]> = {
@@ -47,7 +45,7 @@ export default function Options({ setSelectedModelOption, setSelectedImageFormat
             <div className="">
                 <div className="flex flex-1 flex-row gap-2 justify-left mb-2">
                     <FileImage size={19} color="black"></FileImage>
-                    <div className="text-sm text-black font-semibold mb-3 ">Choose an image Format</div>
+                    <div className="text-sm text-black font-semibold mb-3 ">Choose an Image Format</div>
                 </div>
                 <Dropdown
                     isOpen={openDropdown === 'dropdown1'}
