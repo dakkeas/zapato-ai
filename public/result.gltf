@@ -16,9 +16,9 @@
       "componentType": 5125,
       "type": "SCALAR",
       "bufferView": 0,
-      "count": 74016,
+      "count": 66636,
       "max": [
-        14380
+        13003
       ],
       "min": [
         0
@@ -29,16 +29,16 @@
       "type": "VEC3",
       "byteOffset": 0,
       "bufferView": 1,
-      "count": 14381,
+      "count": 13004,
       "max": [
-        0.4970874786376953,
-        0.28026318550109863,
-        0.331961452960968
+        0.5283260345458984,
+        0.2790597677230835,
+        0.21092170476913452
       ],
       "min": [
-        -0.5443710088729858,
-        -0.2638988494873047,
-        -0.2313309907913208
+        -0.5063750743865967,
+        -0.25763118267059326,
+        -0.18421685695648193
       ]
     },
     {
@@ -46,9 +46,9 @@
       "type": "VEC2",
       "byteOffset": 0,
       "bufferView": 2,
-      "count": 14381,
+      "count": 13004,
       "max": [
-        0.9933333396911621,
+        0.9916689395904541,
         0.9933333396911621
       ],
       "min": [
@@ -58,19 +58,19 @@
     },
     {
       "componentType": 5126,
-      "count": 14381,
+      "count": 13004,
       "type": "VEC3",
       "byteOffset": 0,
       "bufferView": 3,
       "max": [
-        0.9995289444923401,
-        0.99952632188797,
-        0.9995777010917664
+        0.9993833303451538,
+        0.9999411702156067,
+        0.9999008774757385
       ],
       "min": [
-        -0.9990007281303406,
-        -0.9999945163726807,
-        -0.9997499585151672
+        -0.9993645548820496,
+        -0.999959409236908,
+        -0.9999876022338867
       ]
     }
   ],
@@ -116,8 +116,8 @@
         "baseColorTexture": {
           "index": 0
         },
-        "roughnessFactor": 0.4897541105747223,
-        "metallicFactor": 0.014293416403234005
+        "roughnessFactor": 0.5328031778335571,
+        "metallicFactor": 0.012448718771338463
       },
       "doubleSided": false,
       "normalTexture": {
@@ -140,29 +140,29 @@
   "buffers": [
     {
       "uri": "result_data.bin",
-      "byteLength": 756256
+      "byteLength": 682672
     }
   ],
   "bufferViews": [
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 296064
+      "byteLength": 266544
     },
     {
       "buffer": 0,
-      "byteOffset": 296064,
-      "byteLength": 172572
+      "byteOffset": 266544,
+      "byteLength": 156048
     },
     {
       "buffer": 0,
-      "byteOffset": 468636,
-      "byteLength": 115048
+      "byteOffset": 422592,
+      "byteLength": 104032
     },
     {
       "buffer": 0,
-      "byteOffset": 583684,
-      "byteLength": 172572
+      "byteOffset": 526624,
+      "byteLength": 156048
     }
   ]
 }

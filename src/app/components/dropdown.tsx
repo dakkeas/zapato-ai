@@ -7,6 +7,7 @@ interface DropdownProps {
     isOpen: boolean;
     onToggle: () => void;
     content: Record<string, [string, string]>;
+    setSelectedOption: (option: string) => void;
 }
 
 export default function Dropdown({ title, isOpen, onToggle, content, setSelectedOption }: DropdownProps) {

@@ -12,7 +12,7 @@ export default function Landing() {
           <Link href='/dashboard' className="text-sm bg-custom-dark-green text-white px-10 py-4 rounded-sm font-medium">
             Get Started
            </Link>
-          <button className="text-sm border border-black text-black px-10 py-4 rounded-sm font-medium">Learn More</button>
+          {/* <button className="text-sm border border-black text-black px-10 py-4 rounded-sm font-medium">Learn More</button> */}
         </div>
       </div>
       <div className='relative rounded-lg bg-transparent top-20'>

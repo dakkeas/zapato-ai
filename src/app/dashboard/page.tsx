@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Create from '../components/create';
-import Collections from '../components/collections';
-import { Box, LibraryBig} from 'lucide-react';
+import { Box} from 'lucide-react';
 
 const DashboardPage = () => {
     const [activeTab, setActiveTab] = useState('tab1');
@@ -11,8 +10,7 @@ const DashboardPage = () => {
         switch (activeTab) {
             case 'tab1':
                 return <Create/>;
-            case 'tab2':
-                return <Collections/>;
+
             default:
                 return null;
         }
@@ -35,7 +33,7 @@ const DashboardPage = () => {
                             Create
                         </div>
                     </div>
-                    <div
+                    {/* <div
                     className={`caret-transparent cursor-pointer flex justify-center items-center gap-2 flex-row w-29 px-4 py-2 rounded-md text-sm font-medium  ${activeTab === 'tab2' ? 'bg-custom-dark-green text-white' : 'bg-gray-200'}`}
                             onClick={() => setActiveTab('tab2')}
                     >
@@ -45,7 +43,7 @@ const DashboardPage = () => {
                         >
                             Collections
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className='flex'>

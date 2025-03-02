@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 import { FileImage, Brain } from 'lucide-react';
 import Dropdown from './dropdown';
 
+interface OptionsProps {
+    setSelectedModelOption: (option: string) => void;
+    setSelectedImageFormat: (format: string) => void;
+}
+
 const imageFormatOptions: Record<string, [string, string]> = {
     jpeg: ["jpeg", "Common image format with good compression and quality"],
     png: ["png", "Lossless format with transparency support"],
@@ -14,10 +19,7 @@ const modelOptions: Record<string, [string, string]> = {
     stableImageCore: ["Stable Image Core", "Fast, high-quality image generation with no prompt engineering required."],
 };
 
-export default function Options({
-    setSelectedModelOption,
-    setSelectedImageFormat
-}) {
+export default function Options({ setSelectedModelOption, setSelectedImageFormat }: OptionsProps) {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     const toggleDropdown = (dropdown: string) => {

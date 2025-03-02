@@ -1,72 +1,69 @@
-"use client"
-import React, {useState} from 'react';
-import Options from '../components/options';
-import PromptBox from '../components/prompt-box';
-import Result from '../components/result'
-import axios from "axios";
+"use client";
+import React, { useState} from "react";
+import Options from "../components/options";
+import PromptBox from "../components/prompt-box";
+import Result from "../components/result";
 
 const Create = () => {
-    const [selectedModelOption, setSelectedModelOption] = useState('')
-    const [selectedImageFormat, setSelectedImageFormat] = useState('')
-    const [definedPrompt, setDefinedPrompt] = useState('')
-
-    const [image, setImage] = useState<string | null>(null);
-    const [glbFile, setGlbFile] = useState<string | null>(null);
+    const [selectedModelOption, setSelectedModelOption] = useState("");
+    const [selectedImageFormat, setSelectedImageFormat] = useState("");
+    const [finalImageFormat, setFinalImageFormat] = useState("");
+    const [definedPrompt, setDefinedPrompt] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
 
+    
+
     const handleGenerate = async () => {
-        if (!prompt.trim() || !selectedModelOption || !selectedImageFormat) {
-        alert("Please fill all fields!");
-        return;
+        if (!definedPrompt.trim() || !selectedModelOption || !selectedImageFormat) {
+            alert("Please fill all fields!");
+            return;
         }
 
         setStatus("loading");
 
-        try {
-        const response = await axios.post("/api/generateImage&GLB", {
-            definedPrompt: prompt,
-            selectedImageFormat,
-            selectedModelOption,
-        });
-
-        if (response.status === 200) {
-            setImage(response.data.imageUrl);
-            setGlbFile(response.data.glbUrl);
-            setStatus("done");
-        } else {
-            throw new Error(response.data.error);
+        // ✅ Only update finalImageFormat if it changes
+        if (finalImageFormat !== selectedImageFormat) {
+            setFinalImageFormat(selectedImageFormat);
         }
+
+        try {
+            const res1 = await fetch("/api/generateImage", { 
+                method: "POST", 
+                body: JSON.stringify({ definedPrompt, selectedImageFormat, selectedModelOption }) 
+            });
+            if (!res1.ok) throw new Error("Image generation failed");
+
+            const res2 = await fetch("/api/generate3D", { method: "POST" });
+            if (!res2.ok) throw new Error("3D generation failed");
+
+            const res3 = await fetch("/api/convertGLB", { method: "POST" });
+            if (!res3.ok) throw new Error("GLB conversion failed");
+
+            setStatus("done");
         } catch (error) {
-        console.error("Generation failed:", error);
-        alert("Something went wrong.");
-        setStatus("idle");
+            console.error("Error generating model:", error);
+            setStatus("idle");
         }
     };
-
-
 
 
     return (
         <div className="flex flex-col gap-5">
             <div className="flex flex-row gap-5">
                 <Options
-                setSelectedModelOption={setSelectedModelOption}
-                setSelectedImageFormat={setSelectedImageFormat}
-                ></Options>
+                    setSelectedModelOption={setSelectedModelOption}
+                    setSelectedImageFormat={setSelectedImageFormat}
+                />
                 <PromptBox
-                definedPrompt={definedPrompt}
-                setDefinedPrompt={setDefinedPrompt}
-                onGenerate={handleGenerate}
-                ></PromptBox>
+                    status={status}
+                    definedPrompt={definedPrompt}
+                    setDefinedPrompt={setDefinedPrompt}
+                    onGenerate={handleGenerate}
+                />
             </div>
-            <Result
-            status={status}
-            image={image}
-            ></Result>
+            <Result selectedImageFormat={finalImageFormat} status={status} />
         </div>
-
     );
 };
 
 export default Create;
-

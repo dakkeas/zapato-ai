@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Link from 'next/link'
 
 
 const Feature = () => {
@@ -16,7 +16,7 @@ const Feature = () => {
                         <div className="flex gap-3 flex-col justify-center items-start">
                             <div className="text-5xl text-white">Design the Perfect Shoe in Seconds</div>
                             <div className="text-gray-300 text-sm">Simply describe your vision, and Zapato AI transforms your idea into a high-quality 3D shoe model—ready for prototyping, customization, or virtual display.</div>
-                            <button className="bg-custom-light-green text-white px-10 py-4 rounded-sm mt-10 font-medium text-sm">Explore</button>
+                            <Link href="/dashboard" className="bg-custom-light-green text-white px-10 py-4 rounded-sm mt-10 font-medium text-sm">Explore</Link>
                         </div>
                         <div className="relative w-1/2 h-96 bg-white rounded-md">
                             <Image
@@ -32,7 +32,7 @@ const Feature = () => {
                         <div className="flex gap-3 flex-col justify-center items-start">
                             <div className="text-5xl text-white">AI-Powered Precision & Customization</div>
                             <div className="text-gray-100 text-sm">Zapato AI ensures every generated 3D model is detailed and optimized for various use cases—from digital fashion to manufacturing-ready blueprints.</div>
-                            <button className="bg-custom-light-brown text-white px-10 py-4 rounded-sm mt-10 font-medium text-sm">Explore</button>
+                            <Link href='/dashboard' className="bg-custom-light-brown text-white px-10 py-4 rounded-sm mt-10 font-medium text-sm">Explore</Link>
                         </div>
                         <div className="relative w-1/2 h-96 bg-white rounded-md">
                             <Image
@@ -48,7 +48,7 @@ const Feature = () => {
                         <div className="flex gap-3 flex-col justify-center items-start">
                             <div className="text-5xl text-white">Seamless 3D Model Integration</div>
                             <div className="text-gray-300 text-sm">Export your AI-generated shoe models effortlessly into your favorite 3D software, game engines, or manufacturing pipelines with industry-standard formats.</div>
-                            <button className="bg-red-400 text-white px-10 py-4 rounded-sm mt-10 text-sm font-medium">Explore</button>
+                            <Link href='/dashboard' className="bg-red-400 text-white px-10 py-4 rounded-sm mt-10 text-sm font-medium">Explore</Link>
                         </div>
                         <div className="relative w-1/2 h-96 bg-white rounded-md">
                             <Image
